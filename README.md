@@ -1,16 +1,77 @@
-# React + Vite
+# Event Management System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack event management application built with React, Node.js, Express, and MongoDB.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Navbar**: Event Management logo, Home, Admin, Event Gallery, Contact
+- **Admin Dashboard**: Add, edit, delete events
+- **Event Management**: Name, venue, date, time, capacity, description
+- **User Registration**: Join events with remaining slots display
+- **Event Categories**: Upcoming, Present, Past events
+- **MongoDB Integration**: All events stored in database
 
-## React Compiler
+## Setup Instructions
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Backend Setup
 
-## Expanding the ESLint configuration
+1. Navigate to backend directory:
+```bash
+cd backend
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Make sure MongoDB is running on your system
+
+4. Start the backend server:
+```bash
+npm run dev
+```
+
+The backend will run on http://localhost:5000
+
+### Frontend Setup
+
+1. Navigate to frontend directory:
+```bash
+cd frontend
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Start the frontend development server:
+```bash
+npm run dev
+```
+
+The frontend will run on http://localhost:5173
+
+## Usage
+
+1. **Home Page**: View all events with filtering options (All, Upcoming, Present, Past)
+2. **Admin Dashboard**: Access at `/admin` to manage events
+3. **Event Registration**: Click "Register" on any available event
+4. **Event Gallery**: View all events in a gallery format
+5. **Contact**: Contact form and information
+
+## API Endpoints
+
+- `GET /api/events` - Get all events
+- `POST /api/events` - Create new event
+- `PUT /api/events/:id` - Update event
+- `DELETE /api/events/:id` - Delete event
+- `POST /api/events/:id/register` - Register for event
+
+## Technologies Used
+
+- **Frontend**: React, React Router, Axios, Tailwind CSS
+- **Backend**: Node.js, Express.js
+- **Database**: MongoDB with Mongoose
+- **Development**: Vite, Nodemon
